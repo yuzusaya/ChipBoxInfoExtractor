@@ -109,16 +109,13 @@ public class ObjectDetection
         //    }
         //}
 
-        using (var image = Image.Load<Rgba32>(imagePath))
-        {
-            var tensor = LoadInputTensor(new FileInfo(imagePath), 416);
-            var inputs = new List<NamedOnnxValue> { NamedOnnxValue.CreateFromTensor("data", tensor) };
+        var tensor = LoadInputTensor(new FileInfo(imagePath), 416);
+        var inputs = new List<NamedOnnxValue> { NamedOnnxValue.CreateFromTensor("data", tensor) };
 
-            using (var results = session.Run(inputs))
-            {
-                var output = results.First().AsTensor<float>();
-                return Postprocess(output);
-            }
+        using (var results = session.Run(inputs))
+        {
+            var output = results.First().AsTensor<float>();
+            return Postprocess(output);
         }
     }
 
