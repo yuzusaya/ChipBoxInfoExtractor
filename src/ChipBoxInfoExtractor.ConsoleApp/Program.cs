@@ -1,4 +1,4 @@
-using ChipBoxInfoExtractor.ConsoleApp;
+using ChipBoxInfoExtractor.Shared;
 
 ObjectDetection objDetection = new ObjectDetection(new List<string>()
         {

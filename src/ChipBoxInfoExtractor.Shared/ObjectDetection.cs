@@ -20,7 +20,7 @@ using SixLabors.ImageSharp.Processing;
 
 /// Script for CustomVision's exported object detection model.
 
-namespace ChipBoxInfoExtractor.Shared;
+namespace ChipBoxInfoExtractor.ConsoleApp;
 
 public sealed class BoundingBox
 {

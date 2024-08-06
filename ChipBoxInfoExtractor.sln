@@ -5,23 +5,40 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25A8BBA5-F0B6-4F00-819D-59699B355CA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipBoxInfoExtractor.ConsoleApp", "src\ChipBoxInfoExtractor.ConsoleApp\ChipBoxInfoExtractor.ConsoleApp.csproj", "{197B959C-7B94-4FCB-B080-F16E3E0601E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChipBoxInfoExtractor.ConsoleApp", "src\ChipBoxInfoExtractor.ConsoleApp\ChipBoxInfoExtractor.ConsoleApp.csproj", "{197B959C-7B94-4FCB-B080-F16E3E0601E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChipBoxInfoExtractor.WPF", "src\ChipBoxInfoExtractor.WPF\ChipBoxInfoExtractor.WPF.csproj", "{EFB13EAB-0D25-448E-A339-D913E72F510C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChipBoxInfoExtractor.Shared", "src\ChipBoxInfoExtractor.Shared\ChipBoxInfoExtractor.Shared.csproj", "{D2462560-AA9B-428E-AC29-A4D96DD0F1E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{197B959C-7B94-4FCB-B080-F16E3E0601E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{197B959C-7B94-4FCB-B080-F16E3E0601E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{197B959C-7B94-4FCB-B080-F16E3E0601E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{197B959C-7B94-4FCB-B080-F16E3E0601E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB13EAB-0D25-448E-A339-D913E72F510C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB13EAB-0D25-448E-A339-D913E72F510C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB13EAB-0D25-448E-A339-D913E72F510C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB13EAB-0D25-448E-A339-D913E72F510C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2462560-AA9B-428E-AC29-A4D96DD0F1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2462560-AA9B-428E-AC29-A4D96DD0F1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2462560-AA9B-428E-AC29-A4D96DD0F1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2462560-AA9B-428E-AC29-A4D96DD0F1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{197B959C-7B94-4FCB-B080-F16E3E0601E7} = {25A8BBA5-F0B6-4F00-819D-59699B355CA8}
+		{EFB13EAB-0D25-448E-A339-D913E72F510C} = {25A8BBA5-F0B6-4F00-819D-59699B355CA8}
+		{D2462560-AA9B-428E-AC29-A4D96DD0F1E1} = {25A8BBA5-F0B6-4F00-819D-59699B355CA8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57281718-0629-4AF0-B7F7-7D3103B7C2A7}
 	EndGlobalSection
 EndGlobal
