@@ -31,7 +31,7 @@ public partial class MainViewModel : BaseViewModel
     [ObservableProperty]
     private bool _isProcessing;
     [ObservableProperty]
-    private string _filePathBeingProcess;
+    private string _processStatus;
     [ObservableProperty]
     private string _message;
     [RelayCommand(AllowConcurrentExecutions =false)]
@@ -46,8 +46,11 @@ public partial class MainViewModel : BaseViewModel
             var filePath = BrowseFile();
             if (!string.IsNullOrEmpty(filePath))
             {
-                FilePathBeingProcess = filePath;
-                await ExtractBoxesAndSave(filePath, AppendProcessedSuffixToFileName(filePath));
+                ProcessStatus = "Processing "+filePath;
+                await Task.Run(async () =>
+                {
+                    await ExtractBoxesAndSave(filePath, AppendProcessedSuffixToFileName(filePath));
+                });
             }
         }
         else if (browseType == BrowseTypes.Folder)
@@ -55,9 +58,13 @@ public partial class MainViewModel : BaseViewModel
             var folderPath = await BrowseFolder("");
             if (!string.IsNullOrEmpty(folderPath))
             {
-                await LoopFolderRecursively(folderPath);
+                await Task.Run(async () =>
+                {
+                    await LoopFolderRecursively(folderPath);
+                });
             }
         }
+        ProcessStatus = "Completed.";
         IsProcessing = false;
     }
     private string BrowseFile()
@@ -113,7 +120,7 @@ public partial class MainViewModel : BaseViewModel
         {
             if (suffixesBeingIgnored?.Any(suffix => fileName.EndsWith(suffix, StringComparison.InvariantCultureIgnoreCase)) == true)
                 continue;
-            FilePathBeingProcess = fileName;
+            ProcessStatus = "Processing " + fileName;
 
             var processedFolderPath = Directory.CreateDirectory(path + @"\\processed").Name;
             //this is the file that you want to process and store, for example generate a thumbnail from image
@@ -141,22 +148,22 @@ public partial class MainViewModel : BaseViewModel
             }
 
         }
-        try
-        {
-            string overAllResultTxtPath = path + @"\processed\result.txt";
-            using (StreamWriter sw = File.AppendText(overAllResultTxtPath))
-            {
+        //try
+        //{
+        //    string overAllResultTxtPath = path + @"\processed\result.txt";
+        //    using (StreamWriter sw = File.AppendText(overAllResultTxtPath))
+        //    {
 
-            }
-        }
-        catch (Exception e)
-        {
+        //    }
+        //}
+        //catch (Exception e)
+        //{
 
-        }
-        finally
-        {
+        //}
+        //finally
+        //{
 
-        }
+        //}
     }
     private readonly ObjectDetection _objectDetection;
     public MainViewModel()

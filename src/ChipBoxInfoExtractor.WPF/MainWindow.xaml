@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Button Content="Browse File" 
                 Command="{Binding BrowseFileOrFolderCommand}" 
@@ -27,5 +28,8 @@
                 CommandParameter="{x:Static local:BrowseTypes.Folder}"
                 Grid.Row="1"
                 Margin="20"/>
+        <Label Content="{Binding ProcessStatus}"
+               Grid.Row="2"
+               Margin="20"/>
     </Grid>
 </Window>
