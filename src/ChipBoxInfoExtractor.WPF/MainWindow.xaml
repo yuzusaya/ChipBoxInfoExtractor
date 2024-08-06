@@ -13,6 +13,19 @@
         <Binding Source="{StaticResource ViewModel}"></Binding>
     </Window.DataContext>
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Button Content="Browse File" 
+                Command="{Binding BrowseFileOrFolderCommand}" 
+                CommandParameter="{x:Static local:BrowseTypes.File}"
+                Grid.Row="0"
+                Margin="20"/>
+        <Button Content="Browse Folder" 
+                Command="{Binding BrowseFileOrFolderCommand}" 
+                CommandParameter="{x:Static local:BrowseTypes.Folder}"
+                Grid.Row="1"
+                Margin="20"/>
     </Grid>
 </Window>

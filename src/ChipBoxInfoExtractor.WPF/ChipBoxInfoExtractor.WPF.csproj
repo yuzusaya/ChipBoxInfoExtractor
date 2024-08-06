@@ -16,4 +16,10 @@
     <ProjectReference Include="..\ChipBoxInfoExtractor.Shared\ChipBoxInfoExtractor.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="model.onnx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
