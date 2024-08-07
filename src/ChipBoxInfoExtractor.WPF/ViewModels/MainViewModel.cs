@@ -2,7 +2,7 @@ using Microsoft.Win32;
 using System.IO;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
-using ChipBoxInfoExtractor.ConsoleApp;
+using ChipBoxInfoExtractor.Shared;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
